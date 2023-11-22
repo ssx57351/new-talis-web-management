@@ -1,0 +1,47 @@
+{
+  "groups": [
+    {
+      "name": "aliyun.oss",
+      "type": "com.itheima.pojo.AliOSSProperties",
+      "sourceType": "com.itheima.pojo.AliOSSProperties"
+    },
+    {
+      "name": "jwt",
+      "type": "com.itheima.utils.JwtUtils",
+      "sourceType": "com.itheima.utils.JwtUtils"
+    }
+  ],
+  "properties": [
+    {
+      "name": "aliyun.oss.access-key-id",
+      "type": "java.lang.String",
+      "sourceType": "com.itheima.pojo.AliOSSProperties"
+    },
+    {
+      "name": "aliyun.oss.access-key-secret",
+      "type": "java.lang.String",
+      "sourceType": "com.itheima.pojo.AliOSSProperties"
+    },
+    {
+      "name": "aliyun.oss.bucket-name",
+      "type": "java.lang.String",
+      "sourceType": "com.itheima.pojo.AliOSSProperties"
+    },
+    {
+      "name": "aliyun.oss.endpoint",
+      "type": "java.lang.String",
+      "sourceType": "com.itheima.pojo.AliOSSProperties"
+    },
+    {
+      "name": "jwt.algorithm",
+      "type": "java.lang.String",
+      "sourceType": "com.itheima.utils.JwtUtils"
+    },
+    {
+      "name": "jwt.sign-key",
+      "type": "java.lang.String",
+      "sourceType": "com.itheima.utils.JwtUtils"
+    }
+  ],
+  "hints": []
+}

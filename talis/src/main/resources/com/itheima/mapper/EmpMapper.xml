@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.EmpMapper">
+
+    <!--更新员工-->
+    <update id="update">
+        update emp
+        <set>
+            <if test="username !=null and name != ''">
+                username=#{username},
+            </if>
+            <if test="name !=null and name != ''">
+                name=#{name},
+            </if>
+            <if test="gender !=null">
+                gender=#{gender},
+            </if>
+            <if test="image !=null and image != ''">
+                image=#{image},
+            </if>
+            <if test="job !=null">
+                job=#{job},
+            </if>
+            <if test="entrydate !=null">
+                entrydate=#{entrydate},
+            </if>
+            <if test="deptId !=null">
+                dept_id=#{deptId},
+            </if>
+                update_time = #{updateTime}
+        </set>
+        where id=#{id}
+    </update>
+
+    <!--批量删除员工-->
+    <delete id="delete">
+        delete from emp where in
+        <foreach collection="ids" item="id" separator="," >
+            (#{id})
+        </foreach>
+    </delete>
+
+
+    <!--条件查询员工-->
+    <select id="list" resultType="com.itheima.pojo.Emp">
+        <!--resultType属性，指的是查询返回的单条记录所封装的类型。-->
+        select * from emp
+        <where>
+            <if test="name !=null and name!=''">
+                name like concat('%',#{name},'%')
+            </if>
+            <if test="gender != null">
+                and gender = #{gender}
+            </if>
+            <if test="begin != null and end != null">
+                and entrydate between #{begin} and #{end}
+            </if>
+        </where>
+        order by update_time desc
+    </select>
+</mapper>
+
+
